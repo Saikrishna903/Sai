@@ -40,6 +40,7 @@ void show_temperature()
 	char string_to_be_compared[LENGTH_OF_COMPARABLE_STRING] = "{\"temp\"";
 	char split_point1[2] = ":";
 	char split_point2[2] = ",";
+	char degree_symbol = 248; 
 	char *ptr_token_value;
 	ptr_token_value = strtok(weatherReport, split_point1);
 	while(ptr_token_value != NULL)
@@ -51,6 +52,6 @@ void show_temperature()
 		}
 		ptr_token_value = strtok(NULL, split_point1);
 	}
-	printf("\nTemperature in '%s' is %s.\n", location, ptr_token_value);
+	printf("\nTemperature in '%s' is %s%cC.\n", location, ptr_token_value, degree_symbol);
 	return;
 }
